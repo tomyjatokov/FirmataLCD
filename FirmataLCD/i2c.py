@@ -133,8 +133,8 @@ class CharLCD(PyMata3, BaseCharLCD):
             self._backlight = MCP23008_BACKLIGHT if backlight_enabled else MCP23008_NOBACKLIGHT
 
         # Call superclass
-        PyMata3.__init__()
-        BaseCharLCD.__init__(cols, rows, dotsize,
+        PyMata3.__init__(self)
+        BaseCharLCD.__init__(self, cols, rows, dotsize,
                                       charmap=charmap,
                                       auto_linebreaks=auto_linebreaks)
         # Refresh backlight status
